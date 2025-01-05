@@ -1,5 +1,6 @@
 const express = require('express');
 const path = require('path');
+const http = require("http");
 const data = require('./data/info');
 const app = express();
 const port = 3000;
@@ -16,7 +17,7 @@ app.get('/', (req, res) => {
 });
 
 app.use((req, res) => {
-    res.status(404).render('404'); 
+    res.status(404).render('404', data); 
   });
 
 app.listen(port, () => {
