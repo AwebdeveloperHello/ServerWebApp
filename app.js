@@ -16,6 +16,10 @@ app.get('/', (req, res) => {
     res.render('index', data); 
 });
 
+app.get('/hello', (req, res) => {
+  res.render('hello', data); 
+});
+
 app.use((req, res) => {
     res.status(404).render('404', data); 
   });
